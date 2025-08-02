@@ -1,0 +1,19 @@
+{
+  "name": "DocsRAG",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "link-docs": "ln -sf ../docs/docs ./apps/api/data",
+    "start": "concurrently \"npm run start:api\" \"npm run start:docs\"",
+    "start:api": "cd apps/api && npm start",
+    "start:docs": "cd apps/docs && npm start",
+    "postinstall": "pnpm link-docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
